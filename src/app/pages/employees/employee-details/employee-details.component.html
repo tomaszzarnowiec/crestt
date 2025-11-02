@@ -1,0 +1,42 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="employee-details-form">
+  <div class="form-grid">
+    <div class="form-field">
+      <label for="firstName">Imię</label>
+      <input id="firstName" type="text" formControlName="firstName" />
+      @if( form.controls.firstName.invalid && (form.controls.firstName.dirty ||
+      form.controls.firstName.touched) ) {
+      <p class="field-error">Imię musi mieć od 1 do 50 znaków.</p>
+      }
+    </div>
+
+    <div class="form-field">
+      <label for="lastName">Nazwisko</label>
+      <input id="lastName" type="text" formControlName="lastName" />
+      @if( form.controls.lastName.invalid && (form.controls.lastName.dirty ||
+      form.controls.lastName.touched) ) {
+      <p class="field-error">Nazwisko musi mieć od 1 do 50 znaków.</p>
+      }
+    </div>
+
+    <div class="form-field">
+      <label for="gender">Płeć</label>
+      <select id="gender" formControlName="gender">
+        @for( genderOption of genders; track genderOption ) {
+        <option [value]="genderOption">
+          {{ genderOption }}
+        </option>
+        }
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="evidenceNumber">Numer ewidencyjny</label>
+      <input
+        id="evidenceNumber"
+        type="text"
+        formControlName="evidenceNumber"
+        readonly
+      />
+    </div>
+  </div>
+</form>

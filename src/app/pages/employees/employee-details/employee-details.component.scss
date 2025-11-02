@@ -1,0 +1,8 @@
+@use "../../../../styles/variables" as variables;
+@use "../../../../styles/colors" as colors;
+
+.employee-details-form {
+  display: flex;
+  flex-direction: column;
+  gap: variables.spacing(1.5);
+}

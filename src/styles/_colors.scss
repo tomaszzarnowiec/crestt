@@ -1,0 +1,63 @@
+// palletes
+
+$palette-teal-1200: #070b0a;
+$palette-teal-1100: #0e1514;
+$palette-teal-1000: #102422;
+$palette-teal-900: #2b4644;
+$palette-teal-800: #385451;
+$palette-teal-700: #466965;
+$palette-teal-600: #668480;
+$palette-teal-500: #869f9c;
+$palette-teal-400: #a7b9b7;
+$palette-teal-300: #c7d4d3;
+$palette-teal-200: #d7e2e0;
+$palette-teal-100: #e7efee;
+
+$palette-red-1200: #000000;
+$palette-red-1100: #240a04;
+$palette-red-1000: #350e07;
+$palette-red-900: #471309;
+$palette-red-800: #6b1d0d;
+$palette-red-700: #8e2612;
+$palette-red-600: #b23016;
+$palette-red-500: #c04d36;
+$palette-red-400: #cd6a56;
+$palette-red-300: #db8877;
+$palette-red-200: #e8a597;
+$palette-red-100: #f6c2b7;
+
+$palette-sunny-1200: #1c1205;
+$palette-sunny-1100: #422c0d;
+$palette-sunny-1000: #684615;
+$palette-sunny-900: #b37a25;
+$palette-sunny-800: #d9942d;
+$palette-sunny-700: #e0a854;
+$palette-sunny-600: #e7bc7b;
+$palette-sunny-500: #eecfa1;
+$palette-sunny-400: #f1d9b5;
+$palette-sunny-300: #f5e3c8;
+$palette-sunny-200: #f8eddc;
+$palette-sunny-100: #fcf7ef;
+
+// colors
+
+$color-background: $palette-teal-100;
+$color-surface: #ffffff;
+
+$color-text-primary: $palette-teal-1200;
+$color-text-secondary: $palette-teal-900;
+$color-text-inverse: $palette-teal-100;
+
+$color-primary: $palette-teal-700;
+$color-primary-hover: $palette-teal-600;
+
+$color-accent: $palette-sunny-700;
+$color-accent-hover: $palette-sunny-600;
+
+$color-error: $palette-red-700;
+$color-error-hover: $palette-red-600;
+
+$color-border: $palette-teal-300;
+$color-border-hover: $palette-teal-400;
+
+$color-gray-light: $palette-teal-200;

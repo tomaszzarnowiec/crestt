@@ -1,0 +1,73 @@
+@use "../variables" as variables;
+@use "../colors" as colors;
+@use "../mixins" as mixins;
+
+button {
+  @include mixins.button-variant(
+    colors.$color-primary,
+    colors.$color-primary-hover
+  );
+
+  &.btn-accent {
+    @include mixins.button-variant(
+      colors.$color-accent,
+      colors.$color-accent-hover
+    );
+  }
+
+  &.btn-delete {
+    @include mixins.button-variant(
+      colors.$color-error,
+      colors.$color-error-hover
+    );
+  }
+
+  &.btn-disabled {
+    @include mixins.button-variant(
+      colors.$color-gray-light,
+      colors.$color-gray-light
+    );
+    cursor: not-allowed;
+  }
+
+  &.btn-outline {
+    @include mixins.button-outline-variant(
+      colors.$color-primary,
+      colors.$color-primary-hover
+    );
+
+    &.btn-accent {
+      @include mixins.button-outline-variant(
+        colors.$color-accent,
+        colors.$color-accent-hover
+      );
+    }
+
+    &.btn-delete {
+      @include mixins.button-outline-variant(
+        colors.$color-error,
+        colors.$color-error-hover
+      );
+    }
+  }
+
+  &.sort-button {
+    background: transparent;
+    border: none;
+    color: colors.$palette-teal-200;
+    cursor: pointer;
+    font: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: variables.spacing(0.25);
+    padding: 0;
+
+    &:hover {
+      color: colors.$palette-teal-100;
+    }
+
+    .fa-solid {
+      font-size: variables.$font-size-sm;
+    }
+  }
+}

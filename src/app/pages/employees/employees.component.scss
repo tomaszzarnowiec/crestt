@@ -1,0 +1,13 @@
+@use "../../../styles/variables" as variables;
+@use "../../../styles/colors" as colors;
+
+.page-employees-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: variables.spacing(2);
+}
+
+.employee-list {
+  overflow-x: auto;
+}

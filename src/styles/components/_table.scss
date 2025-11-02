@@ -1,0 +1,83 @@
+@use "../../styles/variables" as variables;
+@use "../../styles/colors" as colors;
+@use "../../styles/mixins" as mixins;
+@use "../../styles/fonts" as fonts;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: colors.$color-surface;
+  border: 1px solid colors.$color-border;
+
+  thead {
+    background-color: colors.$color-primary;
+    color: colors.$color-text-inverse;
+
+    th {
+      @include fonts.font-body(variables.$font-weight-semibold);
+      padding: variables.spacing(0.75) variables.spacing(1);
+      text-align: left;
+      font-size: variables.$font-size-sm;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.2s ease, color 0.2s ease;
+
+      &:nth-child(even) {
+        background-color: colors.$color-gray-light;
+      }
+
+      &:hover {
+        background-color: rgba(colors.$color-primary, 0.08);
+
+        td {
+          color: colors.$color-text-primary;
+        }
+      }
+    }
+
+    td {
+      padding: variables.spacing(0.75) variables.spacing(1);
+      border-bottom: 1px solid colors.$color-border;
+
+      &:first-child {
+        @include fonts.font-body(variables.$font-weight-medium);
+      }
+
+      &.actions {
+        display: flex;
+        gap: variables.spacing(0.5);
+        flex-wrap: wrap;
+      }
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+  }
+
+  &.borderless {
+    border: none;
+    box-shadow: none;
+
+    th,
+    td {
+      border-bottom: none;
+    }
+  }
+}
+
+@media (max-width: variables.$breakpoint-md) {
+  .table {
+    font-size: variables.$font-size-sm;
+
+    thead th,
+    tbody td,
+    tfoot td {
+      padding: variables.spacing(0.5);
+    }
+  }
+}

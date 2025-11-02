@@ -1,0 +1,43 @@
+@use "fonts";
+@use "colors";
+@use "variables";
+
+@mixin button-base {
+  @include fonts.font-body(600);
+  border: none;
+  border-radius: variables.$border-radius-md;
+  padding: variables.spacing(0.5) variables.spacing(1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@mixin button-variant($bg-color, $hover-color) {
+  @include button-base;
+  background-color: $bg-color;
+  color: colors.$color-text-inverse;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &:disabled {
+    background-color: colors.$color-gray-light;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-outline-variant($border-color, $hover-border-color) {
+  @include button-base;
+  background-color: transparent;
+  color: $border-color;
+  font-size: variables.$font-size-md;
+
+  &:hover {
+    color: $hover-border-color;
+  }
+
+  &:disabled {
+    color: colors.$color-gray-light;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,19 @@
+@use "../../styles/variables" as variables;
+@use "../../styles/colors" as colors;
+
+.page {
+  padding: variables.spacing(2);
+  background-color: colors.$color-background;
+  border: 1px solid colors.$color-border;
+  border-radius: variables.$border-radius-md;
+  margin: 2rem auto;
+  max-width: 1200px;
+  min-height: 20rem;
+}
+
+@media screen and (max-width: variables.$breakpoint-xl) {
+  .page {
+    padding: variables.spacing(1);
+    margin: 1rem;
+  }
+}

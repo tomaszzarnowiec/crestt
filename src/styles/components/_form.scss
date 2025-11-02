@@ -1,0 +1,48 @@
+@use "../variables" as variables;
+@use "../colors" as colors;
+@use "../mixins" as mixins;
+
+.form-grid {
+  display: grid;
+  gap: variables.spacing(1);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: variables.spacing(0.25);
+
+  label {
+    font-weight: variables.$font-weight-medium;
+    color: colors.$color-text-secondary;
+  }
+
+  input,
+  select {
+    padding: variables.spacing(0.5);
+    border-radius: variables.$border-radius-sm;
+    border: 1px solid colors.$color-border;
+    font-size: variables.$font-size-sm;
+    color: colors.$color-text-primary;
+    background-color: colors.$color-surface;
+
+    &:focus {
+      outline: none;
+      border-color: colors.$color-primary;
+      box-shadow: 0 0 0 3px rgba(colors.$color-primary, 0.15);
+    }
+
+    &:disabled {
+      background-color: colors.$palette-teal-100;
+      color: colors.$palette-teal-500;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.field-error {
+  margin: 0;
+  font-size: variables.$font-size-xs;
+  color: colors.$color-error;
+}

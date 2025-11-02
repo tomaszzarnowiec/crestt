@@ -1,0 +1,70 @@
+<div class="page page-home">
+  <h2>Zadanie do wykonania</h2>
+
+  <section class="task-scope">
+    <h3>Zakres zadania</h3>
+    <ul>
+      <li>
+        Stwórz aplikację Angular od podstaw (nie korzystaj z gotowego projektu).
+      </li>
+      <li>
+        Zaimplementuj model pracownika z polami: id, numer ewidencyjny, imię,
+        nazwisko, płeć (enum: mężczyzna, kobieta, inne). Imię i nazwisko mają
+        mieć długość pomiędzy 1 i 50 znaków. Numer ewidencyjny jest generowany
+        po stronie backendu w momencie zapisu pracownika, jest zapisywany jako
+        string z wiodącymi zerami (w sumie 8 znaków).
+      </li>
+      <li>
+        Zaimplementuj widok listy pracowników z możliwością filtrowania po
+        imieniu i nazwisku oraz sortowania po wybranym polu (opcjonalnie).
+      </li>
+      <li>
+        Dodaj możliwość dodawania nowego pracownika (formularz z walidacją).
+      </li>
+      <li>Dodaj możliwość edytowania istniejącego pracownika.</li>
+      <li>Zaimplementuj routing pomiędzy widokami.</li>
+      <li>
+        Dodaj testy jednostkowe do kluczowych elementów (np. serwis, komponent
+        listy).
+      </li>
+    </ul>
+  </section>
+
+  <section class="notes">
+    <h3>Uwagi</h3>
+    <p>
+      Do wyświetlania listy użyj dowolnych przykładowych danych. Można
+      zaproponować zarządzanie stanem aplikacji. Nie chcemy implementować
+      warstwy backendu.
+    </p>
+    <p>
+      Widoki dodawania i edycji mają mieć zawsze widoczną stopkę. Jeżeli
+      formularz ma większą wysokość niż dostępny obszar, wtedy stopka ma
+      znajdować się u dołu strony, a kontener na formularz ma mieć możliwość
+      przewijania. W przypadku, kiedy wysokość formularza jest mniejsza, stopka
+      ma być przyklejona do dołu formularza, a nie do dołu strony.
+    </p>
+  </section>
+
+  <section class="requirements">
+    <h3>Wymagania</h3>
+    <ul>
+      <li>Użyj Angular (możliwie aktualna wersja), TypeScript, RxJS.</li>
+      <li>Stosuj podział na komponenty i serwisy.</li>
+      <li>Zadbaj o czytelność i jakość kodu.</li>
+      <li>Zaimplementuj routing.</li>
+      <li>Dodaj testy jednostkowe.</li>
+    </ul>
+  </section>
+
+  <section class="evaluation">
+    <h3>Kryteria oceny</h3>
+    <ul>
+      <li>Poprawność działania funkcjonalności.</li>
+      <li>Jakość i czytelność kodu.</li>
+      <li>Zgodność z dobrymi praktykami Angular.</li>
+      <li>Estetyka i responsywność interfejsu.</li>
+      <li>Zakres pokrycia testami.</li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,116 @@
+<div class="page page-employees">
+  <div class="page-employees-header">
+    <h2>Lista Pracowników</h2>
+    <button class="btn-add" (click)="openEmployeeDetails()">
+      Dodaj Pracownika
+    </button>
+  </div>
+  <div class="employee-list">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <button type="button" class="sort-button" (click)="sortBy('id')">
+              <span>ID</span>
+              <i class="fa-solid" [ngClass]="sortIcon('id')"></i>
+            </button>
+          </th>
+          <th>
+            <button
+              type="button"
+              class="sort-button"
+              (click)="sortBy('evidenceNumber')"
+            >
+              <span>Numer Ewidencyjny</span>
+              <i class="fa-solid" [ngClass]="sortIcon('evidenceNumber')"></i>
+            </button>
+          </th>
+          <th>
+            <button
+              type="button"
+              class="sort-button"
+              (click)="sortBy('firstName')"
+            >
+              <span>Imię</span>
+              <i class="fa-solid" [ngClass]="sortIcon('firstName')"></i>
+            </button>
+          </th>
+          <th>
+            <button
+              type="button"
+              class="sort-button"
+              (click)="sortBy('lastName')"
+            >
+              <span>Nazwisko</span>
+              <i class="fa-solid" [ngClass]="sortIcon('lastName')"></i>
+            </button>
+          </th>
+          <th>
+            <button
+              type="button"
+              class="sort-button"
+              (click)="sortBy('gender')"
+            >
+              <span>Płeć</span>
+              <i class="fa-solid" [ngClass]="sortIcon('gender')"></i>
+            </button>
+          </th>
+          <th>Akcje</th>
+        </tr>
+      </thead>
+      <tbody>
+        @if (sortedEmployees().length === 0) {
+        <tr>
+          <td colspan="6" class="no-data">Brak danych do wyświetlenia</td>
+        </tr>
+        } @else { @for(employee of sortedEmployees(); track employee.id) {
+        <tr>
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.evidenceNumber }}</td>
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          <td>{{ employee.gender }}</td>
+          <td class="actions">
+            <button class="btn-outline" (click)="openEmployeeDetails(employee)">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button
+              class="btn-outline btn-delete"
+              (click)="deleteEmployee(employee.id)"
+            >
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </td>
+        </tr>
+        } }
+      </tbody>
+    </table>
+  </div>
+
+  @if (modalOpen()) {
+  <app-modal [modal]="modalConfig()">
+    <app-employee-details
+      modal-body
+      #employeeDetails
+      [employee]="selectedEmployee()"
+      (saved)="closeEmployeeDetails()"
+    ></app-employee-details>
+    <div modal-footer class="modal-footer-actions">
+      <button
+        type="button"
+        class="btn-outline"
+        (click)="closeEmployeeDetails()"
+      >
+        Anuluj
+      </button>
+      <button
+        type="button"
+        class="btn-primary"
+        (click)="employeeDetails.submit()"
+      >
+        Zapisz
+      </button>
+    </div>
+  </app-modal>
+  }
+</div>

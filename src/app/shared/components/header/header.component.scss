@@ -1,0 +1,45 @@
+@use "../../../../styles/variables";
+@use "../../../../styles/colors";
+@use "../../../../styles/fonts";
+
+header {
+  padding: 1rem 2rem;
+  background-color: colors.$color-background;
+  border-bottom: colors.$color-border 1px solid;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    .logo-text {
+      @include fonts.font-body(700);
+      font-size: variables.$font-size-xl;
+      color: colors.$color-primary;
+    }
+  }
+
+  .navigation {
+    a {
+      @include fonts.font-body(500);
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-xl) {
+  header {
+    padding: 1rem;
+
+    .navigation {
+      a {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
