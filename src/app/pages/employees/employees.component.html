@@ -5,6 +5,18 @@
       Dodaj Pracownika
     </button>
   </div>
+  <div class="employee-filter">
+    <div class="form-field">
+      <label for="employeeFilter">Filtruj pracowników</label>
+      <input
+        id="employeeFilter"
+        type="text"
+        placeholder="Wpisz imię lub nazwisko"
+        [value]="filterTerm()"
+        (input)="updateFilterTerm($any($event.target).value)"
+      />
+    </div>
+  </div>
   <div class="employee-list">
     <table class="table">
       <thead>

@@ -8,6 +8,11 @@
   margin-bottom: variables.spacing(2);
 }
 
+.employee-filter {
+  margin-bottom: variables.spacing(1.5);
+  max-width: 320px;
+}
+
 .employee-list {
   overflow-x: auto;
 }

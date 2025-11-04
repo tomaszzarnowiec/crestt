@@ -16,12 +16,4 @@ export const routes: Routes = [
     path: 'employees',
     component: EmployeesComponent,
   },
-  {
-    path: 'employees/new',
-    component: EmployeesComponent,
-  },
-  {
-    path: 'employees/:employeeId',
-    component: EmployeesComponent,
-  },
 ];

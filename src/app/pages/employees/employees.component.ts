@@ -28,18 +28,40 @@ type SortDirection = 'asc' | 'desc';
 export class EmployeesComponent {
   readonly employeesStore = inject(EmployeesStore);
   readonly modalOpen = signal(false);
+  readonly filterTerm = signal('');
 
   private readonly sortState = computed<{
     field: SortField;
     direction: SortDirection;
   } | null>(() => this.employeesStore.sorting());
 
+  readonly filteredEmployees = computed(() => {
+    const term = this.filterTerm().trim().toLowerCase();
+    const employees = this.employeesStore.employees();
+
+    if (!term) {
+      return employees;
+    }
+
+    return employees.filter((employee) => {
+      const firstName = employee.firstName?.toLowerCase() ?? '';
+      const lastName = employee.lastName?.toLowerCase() ?? '';
+      const fullName = `${firstName} ${lastName}`.trim();
+
+      return (
+        firstName.includes(term) ||
+        lastName.includes(term) ||
+        fullName.includes(term)
+      );
+    });
+  });
+
   readonly selectedEmployee = computed(() =>
     this.employeesStore.activeEmployee()
   );
 
   readonly sortedEmployees = computed(() => {
-    const employees = this.employeesStore.employees();
+    const employees = this.filteredEmployees();
     const sort = this.sortState();
 
     if (!sort) {
@@ -104,5 +126,9 @@ export class EmployeesComponent {
     }
 
     return current.direction === 'asc' ? 'fa-sort-up' : 'fa-sort-down';
+  }
+
+  updateFilterTerm(value: string) {
+    this.filterTerm.set(value);
   }
 }
