@@ -164,12 +164,16 @@ describe('EmployeesComponent', () => {
     component.updateFilterTerm('a');
     component.sortBy('firstName');
 
-    const ascending = component.sortedEmployees().map((employee) => employee.firstName);
+    const ascending = component
+      .sortedEmployees()
+      .map((employee) => employee.firstName);
     expect(ascending).toEqual(['Anna', 'Jan', 'Katarzyna', 'Tomasz']);
 
     component.sortBy('firstName');
 
-    const descending = component.sortedEmployees().map((employee) => employee.firstName);
+    const descending = component
+      .sortedEmployees()
+      .map((employee) => employee.firstName);
     expect(descending).toEqual(['Tomasz', 'Katarzyna', 'Jan', 'Anna']);
   });
 });
