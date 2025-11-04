@@ -1,30 +1,26 @@
-# Crestt
+# App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+Lightweight employee management panel built with Angular. The app lets you browse, search, and maintain a catalogue of employees in a clean UI.
 
-## Development server
+## Key features
 
-To start a local development server, run:
+- Browse a sortable table of employees with evidence number, name, and gender.
+- Filter the list on-the-fly by typing an employee's first or last name.
+- Add new employees or edit existing entries in a modal form with validation.
+- Remove employees directly from the list with instant feedback.
+- Mock data layer backed by `@ngrx/signals`, making it easy to replace with a real API later.
 
-```bash
-ng serve
-```
+## Quick start
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm start
+   ```
+3. Visit `http://localhost:4200/` to use the application. The page refreshes automatically after file changes.
 
 ## Building
 
@@ -43,17 +39,3 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ```bash
 ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
